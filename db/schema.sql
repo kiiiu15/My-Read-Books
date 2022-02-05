@@ -1,3 +1,19 @@
-CREATE DATABASE book_history;
+CREATE DATABASE IF NOT EXISTS book_history;
 
 USE book_history;
+
+CREATE TABLE IF NOT EXISTS Author (
+    id INTEGER AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    CONSTRAINT pk_author PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS Book (
+    id INTEGER AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    authorId INTEGER NOT  NULL,
+    description VARCHAR(80) NOT NULL,
+    CONSTRAINT pk_book PRIMARY KEY (id),
+    CONSTRAINT fk_author FOREIGN KEY (authorId) REFERENCES Author(id)
+);
+
