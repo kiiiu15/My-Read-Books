@@ -14,5 +14,9 @@
     "api"
   ],
   "author": "Agustin Bulzomi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "typescript": "^4.5.5"
+  }
 }
