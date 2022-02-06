@@ -91,14 +91,18 @@ export class AuthorJsonFileDao implements AuthorDao {
 
         try {
             const json: string = await this.fileUtils.readFile(Constants.authorFile);
-            const data = JSON.parse(json);
-            this.data = data;
+            const data:Array<any> = JSON.parse(json);
+            this.data = data.map(this.map);
         } catch (error) {
             console.error(error);
             this.data = [];
         }
 
 
+    }
+
+    private map(obj: { id: number; name: string; }): Author {
+        return new Author(obj.id, obj.name);
     }
 
 
