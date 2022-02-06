@@ -1,0 +1,3 @@
+interface IModel {
+    getId():number;
+}

@@ -1,4 +1,6 @@
-class Book {
+import { Author } from "./Author";
+
+export class Book implements IModel{
     constructor(
         private id: number,
         private name: string,

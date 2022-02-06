@@ -1,4 +1,4 @@
-class Author {
+export class Author implements IModel{
 
     constructor(
         private id: number,
